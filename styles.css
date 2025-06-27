@@ -90,7 +90,7 @@
       }
 
       nav ul, .contact-info ul {
-        gap: .5rem;
+        gap: 1rem;
         justify-content: center;
      }
      nav li, .contact-info li {
@@ -115,7 +115,7 @@
       }
 
       nav ul, .contact-info ul {
-        gap: .5rem;
+        gap: 1.2rem;
         justify-content: center;
      }
      nav li, .contact-info li {
