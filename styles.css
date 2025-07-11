@@ -59,7 +59,7 @@
     font-size: 2.5rem;
     color: #007acc;
     user-select: none;
-    margin: 0;  /* remove default h1 margin */
+    margin: 0;
   }
   
    @media (max-width: 500px) {
@@ -147,7 +147,6 @@
       }
     }
 
-
     .home-container, .project-container, .resume-container{
       display: flex;
       gap: 4rem;        
@@ -160,10 +159,45 @@
       padding-bottom: 16px;
     }
 
+    .intro-container{
+      display: flex;
+      gap: 4rem;          
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      flex-wrap: wrap;
+      border-bottom: .5px dashed #d3d3d3;
+      padding-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .intro-heading {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: #007acc;
+      text-indent: 0;
+    }
+
+    .intro-heading-desktop{
+      display: inline;
+    }
+
+    .intro-heading-mobile{
+      display: none;
+    }
+
+    .about-me-container {
+      display: flex;
+      align-items: center;    
+      max-width: 220px;
+      margin: 1rem auto;
+      flex-wrap: wrap;
+    }
+
     .tutoring-container{
       display: flex;
       gap: 4rem;        
-      align-items: flex-start;    
+      align-items: center;    
       max-width: 1200px;
       margin: 3rem auto;
       padding: 0 1rem;
@@ -172,7 +206,28 @@
       padding-bottom: 16px;
     }
 
-    .home-image, .project-image, .resume-image, img {
+    .testimonial-container{
+      display: flex;
+      gap: 4rem;        
+      align-items: center;    
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      flex-wrap: wrap;
+      border-bottom: .5px dashed #d3d3d3;
+      padding-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .intro-image {
+      max-width: 250px;
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .project-image, .resume-image, img {
       max-width: 300px;
       width: 100%;
       border-radius: 8px;
@@ -188,38 +243,71 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    .home-text, .project-text, .tutoring-text{
+    .intro-text, .project-text, .tutoring-text{
       flex: 1;                /* take remaining space */
       min-width: 250px;       /* prevents too narrow on small screens */
+      text-indent: 2em;
     }
 
     @media (max-width: 500px) {
-      .home-image, .project-image, .tutoring-image, img {
+      .intro-image, .project-image, .tutoring-image, img {
       max-width: 200px;
       width: 100%;
       border-radius: 8px;
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       }
-      .home-text, .project-text, .tutoring-text{
+
+
+      .project-text, .tutoring-text{
       flex: 1;                /* take remaining space */
       min-width: 250px;       /* prevents too narrow on small screens */
       order: 2;
       }
-    }
 
-    
+      .intro-text{
+        flex: 1;               
+        min-width: 250px;      
+        order: 1;
+        text-align: center
+      }
 
-    @media (max-width: 500px) {
-      .home-container {
+      .intro-heading {
+        font-size: 3.75rem;
+        margin-bottom: 1rem;
+        color: #007acc;
+      }
+
+      .intro-heading-desktop {
+        display: none;
+      }
+
+      .intro-heading-mobile {
+        display: inline;
+      }
+
+      .intro-image{
+      max-width: 200px;
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      order: 2;
+      }
+
+      .home-container, .intro-container {
       display: flex;
-      gap: 2rem;              /* space between columns */
-      align-items: center;    /* vertically center content */
+      gap: 1rem;              
+      align-items: center;
+      justify-content: center;    
       max-width: 600px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      flex-wrap: wrap;        /* allows wrapping on small screens */
-    }
+      margin: 1rem auto;
+      flex-wrap: wrap;      
+      } 
+      
+      .home-section {
+        margin-top: 1rem;
+      }
     }
 
     section {
@@ -228,9 +316,12 @@
       padding: 0 1rem;
     }
     h1, h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
       color: #007acc;
+      text-indent: 0;
     }
+
     p {
       margin-bottom: 1rem;
     }
