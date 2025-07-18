@@ -147,7 +147,7 @@
       }
     }
 
-    .home-container, .project-container, .resume-container{
+    .home-container, .resume-container{
       display: flex;
       gap: 4rem;        
       align-items: center;    
@@ -159,7 +159,7 @@
       padding-bottom: 16px;
     }
 
-    .intro-container{
+    .intro-container, .project-container{
       display: flex;
       gap: 4rem;          
       max-width: 1200px;
@@ -219,33 +219,30 @@
       align-items: flex-start;
     }
 
-    .intro-image {
-      max-width: 250px;
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    
-    .project-image, .resume-image, img {
-      max-width: 300px;
+    img {
       width: 100%;
       border-radius: 8px;
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    .resume-image {
-      max-width: 500px;
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .intro-image img, .tutoring-image img {
+      max-width: 300px;
+    }
+
+    .project-image img{
+      max-width: 400px;
+      border-radius: 0;
+      box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+    }
+
+    .resume-image img{
+      max-width: 750px;
     }
 
     .intro-text, .project-text, .tutoring-text{
-      flex: 1;                /* take remaining space */
-      min-width: 250px;       /* prevents too narrow on small screens */
+      flex: 1;                
+      min-width: 250px;       
       text-indent: 2em;
     }
 
@@ -315,8 +312,16 @@
       margin: 3rem auto;
       padding: 0 1rem;
     }
-    h1, h2 {
+
+    h1{
       font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #007acc;
+      text-indent: 0;
+    }
+
+    h2 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
       color: #007acc;
       text-indent: 0;
