@@ -18,6 +18,3 @@ document.getElementById('slideshow').addEventListener('click', () => {
 
 // Show first slide
 showSlide(current);
-
-// Auto-advance every 10 seconds
-setInterval(nextSlide, 10000);
