@@ -147,7 +147,7 @@
       }
     }
 
-    .home-container, .resume-container{
+    .home-container {
       display: flex;
       gap: 4rem;        
       align-items: center;    
@@ -159,7 +159,7 @@
       padding-bottom: 16px;
     }
 
-    .intro-container, .project-container{
+    .intro-container{
       display: flex;
       gap: 4rem;          
       max-width: 1200px;
@@ -170,6 +170,7 @@
       padding-bottom: 16px;
       align-items: flex-start;
     }
+
 
     .intro-heading {
       font-size: 4rem;
@@ -194,22 +195,41 @@
       flex-wrap: wrap;
     }
 
-    .tutoring-container{
+    .project-container, .resume-container{
       display: flex;
-      gap: 4rem;        
-      align-items: center;    
+      align-items: center;
+      gap: 8rem;          
       max-width: 1200px;
-      margin: 3rem auto;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
       padding: 0 1rem;
       flex-wrap: wrap;
       border-bottom: .5px dashed #d3d3d3;
       padding-bottom: 16px;
+      justify-content: center;
+    }
+
+    .project-description{
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+    }
+
+    .tutoring-container{
+      display: flex;
+      align-items: center;      
+      max-width: 1200px;
+      margin: 3rem;
+      padding: 0 1rem;
+      flex-wrap: wrap;
+      border-bottom: .5px dashed #d3d3d3;
+      padding-bottom: 16px;
+      justify-content: center;
     }
 
     .testimonial-container{
       display: flex;
       gap: 4rem;        
-      align-items: center;    
       max-width: 1200px;
       margin: 3rem auto;
       padding: 0 1rem;
@@ -217,6 +237,7 @@
       border-bottom: .5px dashed #d3d3d3;
       padding-bottom: 16px;
       align-items: flex-start;
+      justify-content: center;
     }
 
     img {
@@ -231,35 +252,81 @@
     }
 
     .project-image img{
-      max-width: 400px;
-      border-radius: 0;
-      box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+      max-width: 300px;
+      max-height: 250px;
+    }
+
+    .desktop-only {
+      display: block;
     }
 
     .resume-image img{
-      max-width: 750px;
+      max-width: 500px;
     }
 
     .intro-text, .project-text, .tutoring-text{
       flex: 1;                
       min-width: 250px;       
-      text-indent: 2em;
+      text-indent: 0.5rem;
+      margin-left: 2rem;
     }
 
+    .project-slideshow {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+  .slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .slide.active {
+    display: flex;
+  }
+
     @media (max-width: 500px) {
+      .project-container{
+        gap: 2rem;
+      }
+
+      .project-title, .tutoring-title, .resume-title  {
+        text-align: center;
+      }
+
+      .project-slideshow {
+      position: relative;
+      width: 90%;
+      max-width: 250px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
       .intro-image, .project-image, .tutoring-image, img {
-      max-width: 200px;
+      max-width: 250px;
       width: 100%;
       border-radius: 8px;
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      order: 2;
       }
-
 
       .project-text, .tutoring-text{
       flex: 1;                /* take remaining space */
       min-width: 250px;       /* prevents too narrow on small screens */
-      order: 2;
+      order: 1;
       }
 
       .intro-text{
@@ -292,7 +359,7 @@
       order: 2;
       }
 
-      .home-container, .intro-container {
+      .home-container, .intro-container, .tutoring-container, .testimonial-container {
       display: flex;
       gap: 1rem;              
       align-items: center;
@@ -301,6 +368,10 @@
       margin: 1rem auto;
       flex-wrap: wrap;      
       } 
+
+      .desktop-only {
+        display: none;
+      }
       
       .home-section {
         margin-top: 1rem;
@@ -337,6 +408,15 @@
     ul.project-list li {
       margin-bottom: 0.7rem;
     }
+
+    ul {
+      list-style: disc outside
+    }
+
+    .project-text ul ol{
+      margin-left: 20px;
+    }
+
     img.resume-screenshot {
       max-width: 100%;
       border: 1px solid #ccc;
