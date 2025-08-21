@@ -271,6 +271,10 @@
       margin-left: 2rem;
     }
 
+    .tutoring-text{
+      margin-left: 15rem; /*Temp*/
+    }
+
     .project-slideshow {
       position: relative;
       width: 90%;
@@ -324,8 +328,9 @@
       }
 
       .project-text, .tutoring-text{
-      flex: 1;                /* take remaining space */
-      min-width: 250px;       /* prevents too narrow on small screens */
+      flex: 1;      
+      align-items: center;      
+      min-width: 250px;
       order: 1;
       }
 
